@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎬 Video Exclusivo | Mira Ya</title>
+  <meta name="description" content="Video exclusivo para usuarios. Haz clic y accede al contenido completo.">
+  <meta name="keywords" content="video, exclusivo, smartlink, monetización, Adsterra">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      background: url('http://imgfz.com/i/rWiF7lm.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+    }
+    .banner {
+      width: 100%;
+      max-width: 728px;
+      margin: 10px auto;
+    }
+    .video-title {
+      font-size: 1.5rem;
+      margin: 20px 10px 10px;
+    }
+    video {
+      width: 90%;
+      max-width: 640px;
+      border: 3px solid #444;
+      margin: 0 auto;
+      display: block;
+      cursor: pointer;
+    }
+    .play-button {
+      margin: 15px auto;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .banner {
+        max-width: 100%;
+      }
+      .video-title {
+        font-size: 1.2rem;
+      }
+      .play-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner superior -->
+  <div class="banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key': 'TU_KEY_BANNER_SUPERIOR',
+        'format': 'iframe',
+        'height': 90,
+        'width': 728,
+        'params': {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="//www.profitabledisplaynetwork.com/TU_SCRIPT_SUPERIOR.js"></scr' + 'ipt>');
+    </script>
+  </div>
+
+  <div class="video-title">Contenido Exclusivo - ¡Haz clic para verlo!</div>
+
+  <video id="promoVideo" poster="https://via.placeholder.com/640x360?text=Tu+Video+Aquí">
+    <source src="https://qu.ax/LGfKC.mp4" type="video/mp4" />
+    Tu navegador no soporta el video HTML5.
+  </video>
+
+  <button class="play-button" id="playButton">▶️ Play Video</button>
+
+  <!-- Banner inferior -->
+  <div class="banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key': 'TU_KEY_BANNER_INFERIOR',
+        'format': 'iframe',
+        'height': 90,
+        'width': 728,
+        'params': {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="//www.profitabledisplaynetwork.com/TU_SCRIPT_INFERIOR.js"></scr' + 'ipt>');
+    </script>
+  </div>
+
+  <!-- Botón flotante principal -->
+  <a href="#" id="floatingButton" style="position: fixed; bottom: 20px; right: 20px; background-color: red; color: white; padding: 12px 20px; border-radius: 10px; font-size: 16px; text-decoration: none; z-index: 9999;">🚀 Accede ya</a>
+
+  <!-- Botón WhatsApp -->
+  <a href="#" id="whatsappButton" title="Compartir por WhatsApp"
+     style="position: fixed; bottom: 80px; right: 20px; background-color: #25D366; color: white; padding: 12px 16px; border-radius: 50%; font-size: 22px; text-decoration: none; z-index: 9999;">🟢</a>
+
+  <!-- Botón Facebook -->
+  <a href="#" id="facebookButton" title="Compartir en Facebook"
+     style="position: fixed; bottom: 140px; right: 20px; background-color: #3b5998; color: white; padding: 12px 16px; border-radius: 50%; font-size: 22px; text-decoration: none; z-index: 9999;">🔵</a>
+
+  <!-- Botón Twitter -->
+  <a href="#" id="twitterButton" title="Compartir en Twitter"
+     style="position: fixed; bottom: 200px; right: 20px; background-color: #1DA1F2; color: white; padding: 12px 16px; border-radius: 50%; font-size: 22px; text-decoration: none; z-index: 9999;">🐦</a>
+
+  <script>
+    const encodedLink = "aHR0cHM6Ly93d3cucHJvZml0YWJsZXJhdGVjcG0uY29tL2Y5aTMzaHI5ZDI/a2V5PTAzZDc0NzJmNmViNWVhMjRiMzI3N2ExYzNhNTBiZjU2";
+    const smartLink = atob(encodedLink);
+
+    let humanInteraction = false;
+    document.addEventListener('mousemove', () => humanInteraction = true);
+    document.addEventListener('keydown', () => humanInteraction = true);
+
+    const playButton = document.getElementById('playButton');
+    const video = document.getElementById('promoVideo');
+
+    playButton.addEventListener('click', () => {
+      if (!humanInteraction) {
+        alert('Por favor, interactúa con la página antes de reproducir el video.');
+        return;
+      }
+      setTimeout(() => {
+        video.play();
+        window.location.href = smartLink;
+      }, 6000);
+    });
+
+    video.addEventListener('click', () => {
+      if (!humanInteraction) {
+        alert('Por favor, interactúa con la página antes de reproducir el video.');
+        return;
+      }
+      setTimeout(() => {
+        window.location.href = smartLink;
+      }, 6000);
+    });
+
+    history.pushState(null, null, location.href);
+    window.addEventListener('popstate', function () {
+      window.location.href = smartLink;
+    });
+
+    document.getElementById("floatingButton").addEventListener("click", function(e) {
+      e.preventDefault();
+      window.location.href = smartLink;
+    });
+
+    document.getElementById("whatsappButton").addEventListener("click", function(e) {
+      e.preventDefault();
+      const mensaje = encodeURIComponent("👀 Mira este video exclusivo: " + smartLink);
+      window.open("https://api.whatsapp.com/send?text=" + mensaje, "_blank");
+    });
+
+    document.getElementById("facebookButton").addEventListener("click", function(e) {
+      e.preventDefault();
+      const url = encodeURIComponent(smartLink);
+      window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank");
+    });
+
+    document.getElementById("twitterButton").addEventListener("click", function(e) {
+      e.preventDefault();
+      const mensaje = encodeURIComponent("👀 Mira este video exclusivo: " + smartLink);
+      window.open("https://twitter.com/intent/tweet?text=" + mensaje, "_blank");
+    });
+  </script>
+</body>
+</html>
