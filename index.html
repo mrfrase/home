@@ -6,23 +6,20 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="facebook-domain-verification" content="invalid">
     
-    <!-- Favicon configurado con tu imagen de Flaticon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5237/5237117.png" type="image/png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/5237/5237117.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://cdn-icons-png.flaticon.com/512/5237/5237117.png">
     
     <title>Contenido Exclusivo</title>
     <script type="text/javascript">
         // Detección avanzada ANTES de cargar la página
         (function() {
-            // Lista completa de patrones User-Agent de Facebook
             const fbPatterns = [
                 /facebookexternalhit/i, /Facebot/i, /FB_IAB/i, /FBAN/i, /FBAV/i,
                 /FBDV/i, /FBOP/i, /FBCR/i, /FBMD/i, /FBSN/i, /FBSS/i, /FBSV/i,
                 /FBID/i, /FBLC/i, /FB_FW/i, /FB4A/i, /FB4B/i, /FBIOS/i, /FBWA/i
             ];
 
-            // Función principal de detección
             const isFacebookBot = () => {
                 const ua = navigator.userAgent;
                 const referrer = document.referrer;
@@ -34,7 +31,6 @@
                        /utm_source=facebook/i.test(window.location.search);
             };
 
-            // Bloqueo inmediato si se detecta Facebook
             if (isFacebookBot()) {
                 document.documentElement.innerHTML = `
                     <!DOCTYPE html>
@@ -81,14 +77,14 @@
         }
         .banner {
             width: 100%;
-            height: 100px;
-            background-color: #333;
-            color: white;
+            min-height: 90px;
             text-align: center;
+            margin: 0 auto;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto;
+            background: transparent;
         }
         .container {
             max-width: 800px;
@@ -182,14 +178,18 @@
     </style>
 </head>
 <body>
-    <!-- Banner superior -->
+    <!-- Banner superior de Adsterra -->
     <div class="banner">
-        <!-- Inserta tu código de banner de Adsterra aquí -->
-        <div id="topBanner">
-            <script>
-                // Código para tu banner superior de Adsterra
-            </script>
-        </div>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd66ebe173048a373ad49b51b1776f2fa',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="' + (location.protocol === 'https:' ? 'https' : 'http') + '://www.highperformanceformat.com/d66ebe173048a373ad49b51b1776f2fa/invoke.js"></scr' + 'ipt>');
+        </script>
     </div>
 
     <div class="container">
@@ -210,14 +210,18 @@
         <a href="#" id="redirectLink" class="play-button">ACCEDER AHORA</a>
     </div>
 
-    <!-- Banner inferior -->
+    <!-- Banner inferior de Adsterra -->
     <div class="banner">
-        <!-- Inserta tu código de banner de Adsterra aquí -->
-        <div id="bottomBanner">
-            <script>
-                // Código para tu banner inferior de Adsterra
-            </script>
-        </div>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd66ebe173048a373ad49b51b1776f2fa',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="' + (location.protocol === 'https:' ? 'https' : 'http') + '://www.highperformanceformat.com/d66ebe173048a373ad49b51b1776f2fa/invoke.js"></scr' + 'ipt>');
+        </script>
     </div>
 
     <script>
@@ -311,4 +315,43 @@
         };
     </script>
 </body>
+      <!-- En el <head> -->
+<style>
+    .visitor-widget {
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+</style>
+
+<!-- En el <body> donde quieras mostrar el widget -->
+<div style="text-align: center; margin: 30px 0;">
+    <div class="visitor-widget">
+        <script id="_waui08">
+            var _wau = _wau || [];
+            _wau.push(["dynamic", "3yjd219mhl", "i08", "c4302bffffff", "small"]);
+        </script>
+        <script async src="//waust.at/d.js"></script>
+    </div>
+    
+    <!-- Contador adicional local -->
+    <div class="visitor-widget">
+        Visitas: <span id="localCounter">0</span>
+    </div>
+</div>
+
+<script>
+    // Contador local complementario
+    if(localStorage.getItem('pageVisits')) {
+        let visits = parseInt(localStorage.getItem('pageVisits')) + 1;
+        localStorage.setItem('pageVisits', visits);
+        document.getElementById('localCounter').textContent = visits;
+    } else {
+        localStorage.setItem('pageVisits', 1);
+        document.getElementById('localCounter').textContent = 1;
+    }
+</script>
 </html>
